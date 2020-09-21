@@ -77,28 +77,16 @@ def upload():
 
         prednames = model_predict(file_path)
 
-        '''mydir = os.path.join(basepath, 'uploads')
-        # !/usr/bin/python
-        print(mydir)
-        filelist = [f for f in os.listdir(mydir) if f.endswith(".jpg")]
-        for f in filelist:
-            try:
-                print(os.path.join(mydir, f))
-                os.remove(os.path.join(mydir, f))
-            except Exception as e:
-                print(e)
-            else:
-                print("%s removed" % (os.path.join(mydir, f)))'''
+        try:
+            os.remove(os.path.join(basepath, 'uploads', secure_filename(f.filename)))
+        except Exception as e:
+            print(e)
+        else:
+            print("%s removed" % (os.path.join(basepath, 'uploads', secure_filename(f.filename))))
 
         return prednames
     return None
 
 
 if __name__ == '__main__':
-    #app.run( debug = True, threaded = True)
-    #In Cloud
     app.run(host='0.0.0.0', debug = True, threaded = True)
-
-    # Serve the app with gevent
-    #http_server = WSGIServer(('0.0.0.0', 5000), app)
-    #http_server.serve_forever()
