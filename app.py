@@ -77,7 +77,7 @@ def upload():
 
         prednames = model_predict(file_path)
 
-        mydir = os.path.join(basepath, 'uploads')
+        '''mydir = os.path.join(basepath, 'uploads')
         # !/usr/bin/python
         print(mydir)
         filelist = [f for f in os.listdir(mydir) if f.endswith(".jpg")]
@@ -88,7 +88,7 @@ def upload():
             except Exception as e:
                 print(e)
             else:
-                print("%s removed" % (os.path.join(mydir, f)))
+                print("%s removed" % (os.path.join(mydir, f)))'''
 
         return prednames
     return None
