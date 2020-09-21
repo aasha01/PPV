@@ -67,6 +67,8 @@ def upload():
         # Get the file from post request
         f = request.files['image']
 
+        basepath = os.path.dirname(__file__)
+
         # Save the file to ./uploads
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
@@ -74,6 +76,20 @@ def upload():
         f.save(file_path)
 
         prednames = model_predict(file_path)
+
+        mydir = os.path.join(basepath, 'uploads')
+        # !/usr/bin/python
+        print(mydir)
+        filelist = [f for f in os.listdir(mydir) if f.endswith(".jpg")]
+        for f in filelist:
+            try:
+                print(os.path.join(mydir, f))
+                os.remove(os.path.join(mydir, f))
+            except Exception as e:
+                print(e)
+            else:
+                print("%s removed" % (os.path.join(mydir, f)))
+
         return prednames
     return None
 
