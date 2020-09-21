@@ -30,9 +30,6 @@ BS = 256
 loadedModel = keras.models.load_model(MODEL_PATH)
 adam = keras.optimizers.Adam(lr = 0.001)
 loadedModel.compile(optimizer=adam, loss='categorical_crossentropy', metrics=['accuracy'])
-print('Model loaded and compiled with Adam optimizer. Start serving...')
-
-# Check https://keras.io/applications/
 print('Model loaded. Check http://127.0.0.1:5000/')
 
 
