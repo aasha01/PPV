@@ -1,3 +1,11 @@
+click==6.7
+gunicorn==19.6.0
+itsdangerous==0.24
+Jinja2==2.10.1
+MarkupSafe==0.23
+scipy==0.18.1
+sklearn==0.0
+Werkzeug==0.11.15
 
 ## Please list additional packages with version numbers
 tensorflow==2.0.0-beta1
@@ -6,10 +14,9 @@ statsmodels==0.9.0
 numpy==1.17.0
 pandas==0.25.0
 matplotlib==3.1.1
-scipy==1.2
 gast==0.2.2
 
-gunicorn==20.0.4
 Flask==1.1.2
 gevent==20.6.2
 opencv-python-headless==4.2.0.32
+
